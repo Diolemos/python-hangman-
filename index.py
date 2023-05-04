@@ -1,9 +1,10 @@
 import random
 import art
+import hangman_words
 word_list = ["aardvark", "baboon", "camel"]
 
 
-picked_word = random.choice(word_list)
+picked_word = random.choice(hangman_words.word_list)
 #Testing code
 print(f'Pssst, the solution is {picked_word}.')
 
@@ -19,32 +20,30 @@ user_lives = 6
 
 game_over = False
 
-def is_game_over():
-    if '_' not in display:
-        return True
+
     
  
 
-while not game_over and user_lives > 0:
+while not game_over:
     guess= input("Guess a letter: ").lower()    
     for position in range(len(picked_word)):
         letter = picked_word[position]
         if letter == guess:
             display[position]= guess
             print(display)
-            game_over = is_game_over() 
-            continue
+            
         #do smt to break the flow of the loop
-     
-    else:
+    if guess not in picked_word:
         user_lives -= 1
         print(user_lives)
-        
         art.hangman_list[user_lives  ]()   #print hangman
-        if  user_lives == 0:
-            game_over = True  
-            print("At least you tried")
+    if  user_lives == 0:
+        game_over = True  
+        print("At least you tried")
     
+    if '_' not in display:
+        game_over = True
+        print("You is grate wordsmith!")
        
             
       

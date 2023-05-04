@@ -147,3 +147,13 @@ hangman6 = """
 
 # hangman_list = [hangman1,hangman2, hangman3, hangman4, hangman4, hangman5, hangman6]
 hangman_list = [print_hangman6,print_hangman5,print_hangman4,print_hangman3,print_hangman2,print_hangman1]
+
+logo = ''' 
+ _                                             
+| |                                            
+| |__   __ _ _ __   __ _ _ __ ___   __ _ _ __  
+| '_ \ / _` | '_ \ / _` | '_ ` _ \ / _` | '_ \ 
+| | | | (_| | | | | (_| | | | | | | (_| | | | |
+|_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|
+                    __/ |                      
+                   |___/    '''
