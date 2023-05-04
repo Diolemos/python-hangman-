@@ -24,7 +24,9 @@ game_over = False
  
 
 while not game_over:
-    guess= input("Guess a letter: ").lower()    
+    guess= input("Guess a letter: ").lower() 
+    if guess in display:
+        print(f"You have already guessed that letter.")   
     for position in range(len(picked_word)):
         letter = picked_word[position]
         if letter == guess:
