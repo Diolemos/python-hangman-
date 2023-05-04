@@ -27,9 +27,8 @@ print(display)
 "While there are _, ask for words"
 game_over = False
 
-def check_not_guessed(display, underscore):
-    display_str = ''.join(display)
-    if display_str.find(underscore) == -1:
+def is_game_over():
+    if '_' not in display:
         return True
     
  
@@ -41,7 +40,7 @@ while not game_over:
         if letter == guess:
             display[position]= guess
             print(display)
-    game_over = check_not_guessed(display,'_')    
+    game_over = is_game_over(display,'_')    
            
                
 
