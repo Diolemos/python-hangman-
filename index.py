@@ -2,10 +2,10 @@ import random
 import art
 import hangman_words
 
-
+print(art.logo)
 picked_word = random.choice(hangman_words.word_list)
 #Testing code
-print(f'Pssst, the solution is {picked_word}.')
+# print(f'Pssst, the solution is {picked_word}.')
 
 display = []
 
@@ -31,10 +31,10 @@ while not game_over:
             display[position]= guess
             print(display)
             
-        #do smt to break the flow of the loop
+       
     if guess not in picked_word:
         user_lives -= 1
-        print(user_lives)
+        print("Sorry, no such letter")
         art.hangman_list[user_lives  ]()   #print hangman
     if  user_lives == 0:
         game_over = True  
