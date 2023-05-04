@@ -13,18 +13,10 @@ for word in picked_word:
     display.append('_')
 print(display)
 
-
-
-
-
-# currentIndex = 0 
-# for word in picked_word:
-#     if word == guess:
-#         display[currentIndex]= guess
-#         currentIndex +=1
-#     else:
-#         currentIndex +=1
 "While there are _, ask for words"
+
+user_lives = 6
+
 game_over = False
 
 def is_game_over():
@@ -33,14 +25,14 @@ def is_game_over():
     
  
 
-while not game_over:
+while not game_over and user_lives > 6:
     guess= input("Guess a letter").lower()    
     for position in range(len(picked_word)):
         letter = picked_word[position]
         if letter == guess:
             display[position]= guess
             print(display)
-    game_over = is_game_over(display,'_')    
+    game_over = is_game_over()    
            
                
 
