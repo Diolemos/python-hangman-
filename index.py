@@ -25,7 +25,7 @@ def is_game_over():
     
  
 
-while not game_over and user_lives > 6:
+while not game_over and user_lives > 0:
     guess= input("Guess a letter").lower()    
     for position in range(len(picked_word)):
         letter = picked_word[position]
