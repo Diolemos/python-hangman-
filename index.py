@@ -1,7 +1,6 @@
 import random
 import art
 import hangman_words
-word_list = ["aardvark", "baboon", "camel"]
 
 
 picked_word = random.choice(hangman_words.word_list)
