@@ -13,7 +13,7 @@ for word in picked_word:
     display.append('_')
 print(display)
 
-"While there are _, ask for words"
+# "While there are _, ask for words"
 
 user_lives = 6
 
