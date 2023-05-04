@@ -25,7 +25,7 @@ print(display)
 #     else:
 #         currentIndex +=1
 "While there are _, ask for words"
-are_all_words_guessed = False
+game_over = False
 
 def check_not_guessed(display, underscore):
     display_str = ''.join(display)
@@ -34,14 +34,14 @@ def check_not_guessed(display, underscore):
     
  
 
-while not are_all_words_guessed:
+while not game_over:
     guess= input("Guess a letter").lower()    
     for position in range(len(picked_word)):
         letter = picked_word[position]
         if letter == guess:
             display[position]= guess
             print(display)
-    are_all_words_guessed = check_not_guessed(display,'_')    
+    game_over = check_not_guessed(display,'_')    
            
                
 
