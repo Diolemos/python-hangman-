@@ -13,13 +13,10 @@ for word in picked_word:
     display.append('_')
 print(display)
 
-guess= input("Guess a letter").lower()
 
-#TODO-2: - Loop through each position in the chosen_word;
-#If the letter at that position matches 'guess' then reveal that letter in the display at that position.
-#e.g. If the user guessed "p" and the chosen word was "apple", then display should be ["_", "p", "p", "_", "_"].
-# indexes = []
-# # how do I get the index? 
+
+
+
 # currentIndex = 0 
 # for word in picked_word:
 #     if word == guess:
@@ -27,15 +24,26 @@ guess= input("Guess a letter").lower()
 #         currentIndex +=1
 #     else:
 #         currentIndex +=1
-for position in range(len(picked_word)):
-    letter = picked_word[position]
-    if letter == guess:
-        display[position]= guess
-        
-    else:
-        print(".")    
+"While there are _, ask for words"
+are_all_words_guessed = False
+
+def check_not_guessed(display, underscore):
+    display_str = ''.join(display)
+    if display_str.find(underscore) == -1:
+        return True
+    
+ 
+
+while not are_all_words_guessed:
+    guess= input("Guess a letter").lower()    
+    for position in range(len(picked_word)):
+        letter = picked_word[position]
+        if letter == guess:
+            display[position]= guess
+            print(display)
+    are_all_words_guessed = check_not_guessed(display,'_')    
+           
                
 
-#TODO-3: - Print 'display' and you should see the guessed letter in the correct position and every other letter replace with "_".
-#Hint - Don't worry about getting the user to guess the next letter. We'll tackle that in step 3.         
-print(display)         
+     
+print("Hooray!")         
