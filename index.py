@@ -1,5 +1,5 @@
 import random
-
+import art
 word_list = ["aardvark", "baboon", "camel"]
 
 
@@ -26,15 +26,38 @@ def is_game_over():
  
 
 while not game_over and user_lives > 0:
-    guess= input("Guess a letter").lower()    
+    guess= input("Guess a letter: ").lower()    
     for position in range(len(picked_word)):
         letter = picked_word[position]
         if letter == guess:
             display[position]= guess
             print(display)
-    game_over = is_game_over()    
+            game_over = is_game_over() 
+            continue
+        #do smt to break the flow of the loop
+     
+    else:
+        user_lives -= 1
+        print(user_lives)
+        
+        art.hangman_list[user_lives  ]()   #print hangman
+        if  user_lives == 0:
+            game_over = True  
+            print("At least you tried")
+    
+       
+            
+      
+                 
+             
+                
+            
+                
+
+      
+      
            
                
 
      
-print("Hooray!")         
+        
